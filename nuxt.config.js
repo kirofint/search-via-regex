@@ -1,5 +1,9 @@
-export default {  ssr: false,
+export default {
+  ssr: false,
   target: 'static',
+  router: {
+    base: '/search-via-regex/'
+  },
   head: {
     title: 'search-via-regex',
     meta: [

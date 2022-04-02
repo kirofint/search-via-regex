@@ -1,11 +1,14 @@
 {
   "name": "search-via-regex",
   "private": true,
+  "author": "kirofint <kirofint@gmail.com>",
+  "repository": "https://github.com/kirofint/search-via-regex",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.3.5",
@@ -19,6 +22,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.3"
+    "@nuxtjs/vuetify": "^1.12.3",
+    "push-dir": "^0.4.1"
   }
 }
