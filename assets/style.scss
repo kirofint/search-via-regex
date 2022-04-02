@@ -1,0 +1,10 @@
+html {
+  overflow-y: auto !important;
+}
+
+input,
+textarea {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
