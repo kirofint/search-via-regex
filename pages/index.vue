@@ -1,10 +1,7 @@
 <template>
   <v-layout align-center justify-center fill-height>
-    <v-col cols="4">
-      <v-form
-        lazy-validation
-        @submit.prevent="submitForm"
-      >
+    <v-col cols="12" sm="10" md="6" lg="4">
+      <v-form @submit.prevent="submitForm">
         <v-textarea
           outlined
           no-resize
@@ -13,6 +10,7 @@
           transition="scale-transition"
           v-model="namesList"
           :height="(needResult && !namesListFocused) ? '10vh' : '100%'"
+          :class="{ 'mt-8': $vuetify.breakpoint.smAndDown }"
           @focus="namesListFocused = true"
           @focusout="namesListFocused = false"
         />
@@ -49,16 +47,20 @@
           >To Find</v-btn>
         </div>
       </v-form>
-    </v-col>
 
+    </v-col>
     <v-snackbar
       elevation="24"
+      min-height="30px"
+      content-class="pa-0"
       color="rgb(44 44 44 / 20%)"
       v-model="prompt"
+      :top="$vuetify.breakpoint.smAndDown"
     >
       <div class="text-center"
       >{{ promptMessage }}</div>
     </v-snackbar>
+
   </v-layout>
 </template>
 
@@ -79,6 +81,7 @@ export default {
   methods: {
     submitForm () {
       const matchEx = new RegExp(this.regexText, 'gi')
+
       this.resultSearhing =
       this.namesList?.trim()?.split('\n')
       ?.reduce((stack, line) => {
