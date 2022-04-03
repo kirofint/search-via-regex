@@ -1,0 +1,19 @@
+html {
+  overflow-y: auto !important;
+  &::-webkit-scrollbar-track {
+    background-color: #232929;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #353535;
+  }
+}
+
+input,
+textarea {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
